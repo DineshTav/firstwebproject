@@ -8,7 +8,7 @@ const CATEGORIES = [
   { name: "history", color: "#f97316" },
   { name: "news", color: "#8b5cf6" },
 ];
-
+// Comment to check the working of Github
 const initialFacts = [
   {
     id: 1,
