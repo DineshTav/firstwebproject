@@ -9,6 +9,7 @@ const CATEGORIES = [
   { name: "news", color: "#8b5cf6" },
 ];
 // Comment to check the working of Github
+//Adding another comment for testing
 const initialFacts = [
   {
     id: 1,

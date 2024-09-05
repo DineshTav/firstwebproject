@@ -108,6 +108,8 @@ function createFactsList(dataArray) {
   factsList.insertAdjacentHTML("afterbegin", html);
 }
 
+//Comment for testing Github
+
 //Toggle form visiblility
 btn.addEventListener("click", function () {
   if (form.classList.contains("hidden")) {
