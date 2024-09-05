@@ -35,6 +35,7 @@ const initialFacts = [
     text: "Dinesh Tavasalkar is an excellent coder",
   },
 ];
+//Sample comment for testing now
 /*
 //create DOM elements
 factlist.innerHTML = "";

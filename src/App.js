@@ -117,7 +117,7 @@ function App() {
     </>
   );
 }
-
+//Loader function
 function Loader() {
   return <p className="message">Loading....</p>;
 }
