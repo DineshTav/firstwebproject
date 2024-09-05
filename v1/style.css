@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #292524;
+  color: #fafaf9;
+  font-family: "Sono", sans-serif;
+  padding: 48px 64px;
+}
+
+.hidden {
+  /*hidden and fact-form class that contain the forms both have display properties.
+  We set the hidden class display as important over fact-form display property*/
+  display: none !important;
+}
+/*MAIN LAYOUT*/
+.container {
+  /*max-width-content will appear proper till a width of 1500 px
+  if we shrink below 1500px then the element will adjust as per browser window size*/
+  max-width: 1500px;
+  /*centering the content*/
+  margin: 0 auto;
+  /*top & bottom margin=0
+  left and right matgin=auto*/
+}
+
+.header {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fact-form {
+  background-color: #44403c;
+  margin-bottom: 40px;
+  border-radius: 16px;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.fact-form input,
+.fact-form select {
+  background-color: #78716c;
+  border: none;
+  border-radius: 100px;
+  padding: 16px;
+  font-size: 18px;
+  /*inherit color & font-family from Body element*/
+  color: inherit;
+  font-family: inherit;
+  width: 250px; /*width of 250 is later overwritten
+  in @media when width < 1000px*/
+}
+/* :: mean placeholder is sudo-element*/
+.fact-form input::placeholder {
+  color: #a8a29e;
+}
+.fact-form span {
+  /*this is text of 200*/
+  font-weight: 600;
+  font-size: 18px;
+}
+.fact-form input:first-child {
+  /*With flex-grow, share a fact, input element
+  will take up all the space it wishes to. So the fiest element will
+  shrink or expand if we vary the page width*/
+  flex-grow: 1;
+}
+
+.main {
+  /*creating a CSS grid*/
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 48px;
+}
+
+@media (max-width: 900px) {
+  /*shrinking the fact-form,aside & section
+  one below the other with only 1 column*/
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*Elements*/
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  #create a gap between image and H1;
+}
+/*descendent selector - will select
+all the img that are inside class=logo*/
+.logo img {
+  /*these width & height values will overide img HTMl value*/
+  width: 68px;
+  height: 68px;
+}
+
+h1 {
+  font-size: 42px;
+  text-transform: uppercase;
+  font-family: "Coiny", sans-serif;
+  line-height: 1;
+  margin-top: 6px;
+  margin-left: 10px;
+}
+
+.category {
+  margin-bottom: 16px;
+}
+.fact {
+  font-size: 20px;
+  line-height: 1.2;
+  background-color: #44403c;
+  margin-bottom: 16px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  border-radius: 16px;
+  /*justify-content: space-between;*/
+  letter-spacing: -1px;
+  gap: 10px;
+}
+
+@media (max-width: 1200px) {
+  /*if maxwidth goes below 1200 then execute the below code*/
+  .fact {
+    /*Bydefault flex direction = row(vertical alignment, one after other) but if the width shrink below 1200,
+    then we change flex direction to column(horizontal, one below other), so all element appear below each other */
+    flex-direction: column;
+    gap: 12px;
+    /*all items will align on right side*/
+    align-items: flex-end;
+  }
+}
+
+.tag {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: "Coiny", sans-serif;
+  padding-top: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+  border-radius: 100px;
+}
+
+.vote-buttons {
+  margin-left: auto;
+  /*placing the vote button side-by-side*/
+  display: flex;
+  flex-shrink: 0; /*this will disable the 
+  vote buttons from shrinking in size when the width is shrinked*/
+  gap: 8px;
+}
+
+.vote-buttons button {
+  background-color: #78716c;
+  border: none;
+  font-size: 18px;
+  border-radius: 100px;
+  padding: 6px 12px;
+  /*color is inheriting from body class*/
+  color: inherit;
+  font-family: inherit;
+  /*700 = boldness(weight) in given Google font*/
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Parent .vote-button accessing child button elements & applying hover effect */
+.vote-buttons button:hover {
+  background-color: #292534;
+}
+
+ul {
+  list-style: none;
+}
+
+.source :link,
+.source:visited {
+  color: #a8a29e;
+  text-decoration: none;
+  margin-left: 12px;
+  transition: 2s;
+}
+
+/*sudo source class called hover
+  active -> when you click the link*/
+.source:hover,
+.source:active {
+  /*active->you clicked the button*/
+  color: #3b82f6;
+}
+
+.btn {
+  border: none;
+  font-family: "Coiny", sans-serif;
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: 17px;
+  border-radius: 100px;
+  cursor: pointer;
+  /*padding : top(16), left(0) & right(0), bottom(13)*/
+  padding: 16px 0 13px;
+  background-image: linear-gradient(135deg, #3b82f6, #ef4444, #16a34a, #eab308);
+  /*inherit the color given to body element*/
+  color: inherit;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  /*func is called when you hover over tge button*/
+  transform: scale(110%) rotate(-2deg);
+}
+
+.btn-large {
+  font-size: 20px;
+  padding: 20px 32px 17px;
+}
+.btn-all-categories {
+  margin-bottom: 16px;
+  /*Button will occupy 100% width of parent i.e <aside>*/
+  width: 100%;
+}
+
+.btn-category {
+  width: 100%;
+  /*disabling background image for btn-category buttons*/
+  background-image: none;
+}
+
+@media (max-width: 1000px) {
+  body {
+    padding: 32px, 48px;
+  }
+  .fact-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .fact-form input,
+  .fact-form select {
+    width: auto;
+  }
+}
